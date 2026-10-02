@@ -1,231 +1,597 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>LISTENEA | Un espacio para ser escuchado</title>
+  <title>LISTENEA | Un espacio para ser escuchado</title>
 
-<style>
-*{box-sizing:border-box}
-body{
-  margin:0;
-  font-family:Arial,Helvetica,sans-serif;
-  background:#faf8f5;
-  color:#272127;
-}
-header{
-  min-height:90vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:40px 20px;
-  background:linear-gradient(135deg,#26172b,#5a345d);
-  color:white;
-}
-.hero{max-width:750px}
-.logo{
-  letter-spacing:8px;
-  font-size:18px;
-  margin-bottom:35px;
-}
-h1{
-  font-family:Georgia,serif;
-  font-size:60px;
-  font-weight:400;
-  margin:0 0 20px;
-}
-.hero p{
-  font-size:20px;
-  line-height:1.6;
-  color:#eee4ed;
-}
-.button{
-  display:inline-block;
-  margin-top:25px;
-  padding:16px 30px;
-  background:#fff;
-  color:#442547;
-  text-decoration:none;
-  border-radius:30px;
-  font-weight:bold;
-}
-section{
-  max-width:900px;
-  margin:auto;
-  padding:80px 25px;
-}
-h2{
-  font-family:Georgia,serif;
-  font-size:38px;
-  font-weight:400;
-  text-align:center;
-  color:#4b2b4e;
-}
-.subtitle{
-  text-align:center;
-  max-width:650px;
-  margin:0 auto 45px;
-  line-height:1.7;
-}
-.cards{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
-}
-.card{
-  background:white;
-  padding:30px;
-  border-radius:15px;
-  box-shadow:0 8px 30px rgba(0,0,0,.06);
-}
-.card h3{color:#59375c}
-.rules{
-  background:#eee6ee;
-  max-width:none;
-}
-.rules-inner{
-  max-width:800px;
-  margin:auto;
-}
-.rules li{
-  margin:15px 0;
-  line-height:1.5;
-}
-.notice{
-  background:white;
-  border-left:4px solid #59375c;
-  padding:20px;
-  margin-top:30px;
-}
-.booking{text-align:center}
-footer{
-  text-align:center;
-  padding:35px;
-  background:#26172b;
-  color:#cdbfce;
-  font-size:14px;
-}
-@media(max-width:600px){
-  h1{font-size:43px}
-}
-</style>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f7f3ed;
+      color: #2f2a26;
+      line-height: 1.6;
+    }
+
+    header {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 50px 20px;
+      background: linear-gradient(135deg, #eee5da, #faf8f4);
+    }
+
+    .hero {
+      max-width: 750px;
+    }
+
+    .logo {
+      font-size: 42px;
+      letter-spacing: 8px;
+      font-weight: 600;
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      font-size: 42px;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 17px;
+    }
+
+    .subtitle {
+      max-width: 620px;
+      margin: 0 auto 30px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 28px;
+      margin: 10px 5px;
+      background: #2f2a26;
+      color: white;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      opacity: 0.85;
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      display: inline-block;
+      padding: 13px 25px;
+      margin: 10px 5px;
+      border: 1px solid #2f2a26;
+      color: #2f2a26;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+    }
+
+    section {
+      max-width: 900px;
+      margin: auto;
+      padding: 70px 22px;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 35px;
+    }
+
+    .card {
+      background: white;
+      padding: 32px 25px;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+      text-align: center;
+    }
+
+    .price {
+      font-size: 30px;
+      font-weight: bold;
+      margin: 12px 0;
+    }
+
+    .rules {
+      background: #eee5da;
+      max-width: none;
+    }
+
+    .rules-content {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .rules ul {
+      padding-left: 25px;
+    }
+
+    .rules li {
+      margin-bottom: 12px;
+    }
+
+    .booking {
+      text-align: center;
+    }
+
+    .payment-box {
+      background: white;
+      max-width: 560px;
+      margin: 30px auto;
+      padding: 32px 25px;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    }
+
+    .payment-number {
+      font-size: 27px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin: 15px 0;
+    }
+
+    .steps {
+      max-width: 600px;
+      margin: 30px auto;
+      text-align: left;
+      background: #faf8f4;
+      padding: 25px 30px;
+      border-radius: 18px;
+    }
+
+    .steps li {
+      margin-bottom: 10px;
+    }
+
+    .note {
+      font-size: 14px;
+      opacity: 0.75;
+      max-width: 600px;
+      margin: 20px auto;
+    }
+
+    .coming-soon {
+      max-width: 560px;
+      margin: 30px auto;
+      padding: 20px;
+      border: 1px solid #d8d0c7;
+      border-radius: 15px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      background: #2f2a26;
+      color: white;
+    }
+
+    footer p {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 34px;
+      }
+
+      h2 {
+        font-size: 27px;
+      }
+
+      .logo {
+        font-size: 32px;
+        letter-spacing: 6px;
+      }
+
+      section {
+        padding: 55px 18px;
+      }
+    }
+  </style>
 </head>
+
 
 <body>
 
-<header>
-<div class="hero">
-  <div class="logo">LISTENEA</div>
+  <!-- PORTADA -->
+  <header>
+    <div class="hero">
 
-  <h1>A veces solo necesitas ser escuchado.</h1>
+      <div class="logo">LISTENEA</div>
 
-  <p>
-  Un espacio privado para hablar, desahogarte y compartir lo que llevas dentro
-  con alguien dispuesto a escucharte sin juzgar.
-  </p>
+      <h1>A veces solo necesitas ser escuchado.</h1>
 
-  <a class="button" href="#reservar">Reservar una conversación</a>
-</div>
-</header>
+      <p class="subtitle">
+        Un espacio privado, respetuoso y confidencial para conversar
+        sin juicios, sin presión y a tu propio ritmo.
+      </p>
 
-<section>
-<h2>¿Qué es LISTENEA?</h2>
+      <a class="btn" href="#reservar">
+        Reservar una conversación
+      </a>
 
-<p class="subtitle">
-LISTENEA es un servicio de conversación y escucha humana.
-Puedes hablar sobre tu día, tus pensamientos, preocupaciones o simplemente
-tener una conversación cuando necesitas que alguien te escuche.
-</p>
+      <a
+        class="btn-outline"
+        href="https://wa.me/51940020365?text=Hola%20LISTENEA,%20quisiera%20más%20información."
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Más información
+      </a>
 
-<div class="cards">
+    </div>
+  </header>
 
-<div class="card">
-<h3>Habla</h3>
-<p>Un espacio donde puedes expresarte con libertad y respeto.</p>
-</div>
 
-<div class="card">
-<h3>Conecta</h3>
-<p>Una conversación humana, privada y sin juicios.</p>
-</div>
+  <!-- SOBRE LISTENEA -->
+  <section class="center">
 
-<div class="card">
-<h3>Respira</h3>
-<p>Tómate un momento para decir aquello que quizá no has podido decir.</p>
-</div>
+    <h2>Un espacio para hablar</h2>
 
-</div>
-</section>
+    <p>
+      LISTENEA nace para ofrecer un momento de conversación y escucha
+      humana en un ambiente de respeto, privacidad y confidencialidad.
+    </p>
 
-<section>
-<h2>¿Cómo funciona?</h2>
+    <p>
+      No necesitas tener las palabras perfectas.
+      Puedes simplemente hablar y ser escuchado.
+    </p>
 
-<div class="cards">
+  </section>
 
-<div class="card">
-<h3>1. Reserva</h3>
-<p>Elige tu sesión y solicita un horario.</p>
-</div>
 
-<div class="card">
-<h3>2. Acepta las reglas</h3>
-<p>Antes del pago deberás leer y aceptar las condiciones de la sesión.</p>
-</div>
+  <!-- PRECIOS -->
+  <section>
 
-<div class="card">
-<h3>3. Conversa</h3>
-<p>Conéctate de manera virtual a la hora acordada para tu conversación.</p>
-</div>
+    <div class="center">
 
-</div>
-</section>
+      <h2>Elige tu espacio</h2>
 
-<section class="rules">
+      <p>
+        Selecciona el tiempo que necesites para conversar.
+      </p>
 
-<div class="rules-inner">
+    </div>
 
-<h2>Reglas antes de reservar</h2>
 
-<ul>
-<li>Servicio exclusivamente para personas de <strong>25 años o más.</strong></li>
-<li>Respeto mutuo durante toda la conversación.</li>
-<li>No se permiten acoso, amenazas, desnudez, solicitudes sexuales ni contenido sexual explícito.</li>
-<li>No está permitido grabar, fotografiar, transmitir ni distribuir la sesión.</li>
-<li>Las sesiones son exclusivamente virtuales. No se realizan encuentros presenciales con clientes.</li>
-<li>LISTENEA puede finalizar una sesión inmediatamente si se incumplen estos límites.</li>
-<li>El pago confirma la reserva y se aplican las condiciones de cancelación y reembolso informadas antes del pago.</li>
-</ul>
+    <div class="cards">
 
-<div class="notice">
-<strong>Importante:</strong><br><br>
-LISTENEA ofrece escucha, conversación y perspectivas personales.
-No es terapia y no ofrece psicoterapia, diagnóstico, tratamiento psicológico
-o psiquiátrico, asesoramiento médico ni servicios de emergencia.
-</div>
+      <!-- 30 MINUTOS -->
+      <div class="card">
 
-</div>
-</section>
+        <h3>Conversación de 30 minutos</h3>
 
-<section class="booking" id="reservar">
+        <div class="price">
+          S/ 49.00
+        </div>
 
-<h2>Reserva tu espacio</h2>
+        <p>
+          Un espacio privado para hablar, expresarte
+          y sentirte escuchado.
+        </p>
 
-<p class="subtitle">
-Antes de realizar el pago recibirás las reglas completas de la sesión.
-Para continuar deberás confirmar que tienes 25 años o más y que aceptas las condiciones.
-</p>
+        <a class="btn" href="#reservar">
+          Reservar 30 minutos
+        </a>
 
-<a class="button" style="background:#4b2b4e;color:white;" href="#">
-Reservar por WhatsApp
-</a>
+      </div>
 
-</section>
 
-<footer>
-LISTENEA © 2026 · Escucha humana con respeto, privacidad y límites.
-</footer>
+      <!-- 60 MINUTOS -->
+      <div class="card">
+
+        <h3>Conversación de 60 minutos</h3>
+
+        <div class="price">
+          S/ 99.00
+        </div>
+
+        <p>
+          Más tiempo para conversar con calma
+          y a tu propio ritmo.
+        </p>
+
+        <a class="btn" href="#reservar">
+          Reservar 60 minutos
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- REGLAS -->
+  <section class="rules">
+
+    <div class="rules-content">
+
+      <h2 class="center">
+        Antes de reservar
+      </h2>
+
+      <p class="center">
+        Al solicitar una conversación con LISTENEA,
+        aceptas las siguientes condiciones:
+      </p>
+
+
+      <ul>
+
+        <li>
+          El servicio está disponible únicamente
+          para personas mayores de 25 años.
+        </li>
+
+        <li>
+          El respeto mutuo es obligatorio durante
+          toda la conversación.
+        </li>
+
+        <li>
+          La privacidad y confidencialidad son
+          fundamentales.
+        </li>
+
+        <li>
+          No se permiten conversaciones,
+          solicitudes ni contenido sexual.
+        </li>
+
+        <li>
+          La listener tiene derecho a finalizar
+          inmediatamente la conversación ante acoso,
+          amenazas, contenido sexual o faltas de respeto.
+        </li>
+
+        <li>
+          Está prohibido grabar la sesión,
+          ya sea en audio, video o cualquier otro formato.
+        </li>
+
+        <li>
+          No se realizan encuentros presenciales
+          con clientes.
+        </li>
+
+        <li>
+          LISTENEA promueve límites saludables.
+          El servicio no busca crear dependencia emocional.
+        </li>
+
+        <li>
+          LISTENEA ofrece escucha y conversación.
+          No ofrece terapia, diagnósticos,
+          tratamientos psicológicos ni servicios médicos.
+        </li>
+
+        <li>
+          Ante amenazas o situaciones que impliquen
+          un riesgo inmediato, la conversación podrá
+          finalizarse y se recomendará buscar ayuda
+          profesional o de emergencia apropiada.
+        </li>
+
+        <li>
+          Una vez confirmada la sesión,
+          los pagos no son reembolsables,
+          salvo cancelación por parte de LISTENEA.
+        </li>
+
+      </ul>
+
+    </div>
+
+  </section>
+
+
+  <!-- RESERVA Y PAGO -->
+  <section class="booking" id="reservar">
+
+    <h2>
+      Reserva tu espacio
+    </h2>
+
+    <p>
+      Elige una conversación de
+      <strong>30 minutos por S/ 49.00</strong>
+      o
+      <strong>60 minutos por S/ 99.00</strong>.
+    </p>
+
+
+    <!-- YAPE / PLIN -->
+    <div class="payment-box">
+
+      <h3>
+        Paga con Yape o Plin 🇵🇪
+      </h3>
+
+      <p class="payment-number">
+        +51 994 499 556
+      </p>
+
+      <p>
+        Realiza el pago correspondiente
+        a la duración que deseas reservar.
+      </p>
+
+    </div>
+
+
+    <!-- PASOS -->
+    <div class="steps">
+
+      <strong>¿Cómo confirmar tu reserva?</strong>
+
+      <ol>
+
+        <li>
+          Elige una sesión de 30 o 60 minutos.
+        </li>
+
+        <li>
+          Realiza el pago por Yape o Plin.
+        </li>
+
+        <li>
+          Guarda tu comprobante de pago.
+        </li>
+
+        <li>
+          Envíalo al WhatsApp oficial de LISTENEA.
+        </li>
+
+        <li>
+          Indica tu nombre, duración elegida
+          y el día y horario que prefieres.
+        </li>
+
+        <li>
+          LISTENEA verificará el pago y
+          la disponibilidad antes de confirmar la sesión.
+        </li>
+
+      </ol>
+
+    </div>
+
+
+    <!-- COMPROBANTE -->
+    <h3>
+      ¿Ya realizaste el pago?
+    </h3>
+
+    <p>
+      Envía tu comprobante por WhatsApp
+      para solicitar la confirmación de tu reserva.
+    </p>
+
+
+    <a
+      class="btn"
+      href="https://wa.me/51940020365?text=Hola%20LISTENEA,%20ya%20realicé%20mi%20pago%20y%20quiero%20confirmar%20mi%20reserva.%20Adjunto%20mi%20comprobante."
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Enviar comprobante por WhatsApp
+    </a>
+
+
+    <p class="note">
+
+      Importante: enviar el comprobante no confirma
+      automáticamente la reserva.
+
+      LISTENEA verificará el pago y la disponibilidad
+      del horario antes de confirmar tu sesión.
+
+    </p>
+
+
+    <!-- TARJETAS FUTURAS -->
+    <div class="coming-soon">
+
+      <strong>
+        Próximamente
+      </strong>
+
+      <p>
+        Pagos con tarjeta de crédito y débito.
+      </p>
+
+      <p>
+        Visa · Mastercard
+      </p>
+
+    </div>
+
+
+    <hr
+      style="
+        margin: 45px auto;
+        max-width: 500px;
+        opacity: 0.25;
+      "
+    >
+
+
+    <!-- INFORMACIÓN -->
+    <h3>
+      ¿Necesitas más información?
+    </h3>
+
+    <p>
+      Escríbenos directamente al WhatsApp
+      oficial de LISTENEA.
+    </p>
+
+
+    <a
+      class="btn-outline"
+      href="https://wa.me/51940020365?text=Hola%20LISTENEA,%20quisiera%20más%20información."
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      WhatsApp +51 940 020 365
+    </a>
+
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <strong>
+      LISTENEA
+    </strong>
+
+    <p>
+      Escucha humana · Privacidad · Respeto
+    </p>
+
+  </footer>
+
 
 </body>
+
 </html>
