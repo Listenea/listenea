@@ -1,14 +1,37 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>LISTENEA | Un espacio para ser escuchado</title>
+  <title>LISTENEA | Hay cosas que necesitas decir</title>
+
+  <meta name="description"
+        content="LISTENEA es un espacio privado de escucha humana para adultos. Habla con libertad, sin juicios y a tu propio ritmo.">
 
   <style>
+
+    /* ================================
+       LISTENEA — PREMIUM DARK EDITION
+       ================================ */
+
+    :root {
+      --black: #0b0908;
+      --espresso: #17110e;
+      --brown: #241914;
+      --brown-light: #34241d;
+      --cream: #f2eadf;
+      --cream-dark: #d8cbbb;
+      --champagne: #c7a97c;
+      --gold: #a88759;
+      --white: #fffaf3;
+      --muted: #a99c90;
+      --whatsapp: #25D366;
+    }
+
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
     }
 
@@ -17,319 +40,1141 @@
     }
 
     body {
-      margin: 0;
+      background: var(--black);
+      color: var(--cream);
       font-family: Arial, Helvetica, sans-serif;
-      background: #f7f3ed;
-      color: #2f2a26;
-      line-height: 1.6;
+      line-height: 1.7;
+      overflow-x: hidden;
     }
 
-    header {
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 50px 20px;
-      background: linear-gradient(135deg, #eee5da, #faf8f4);
+    h1,
+    h2,
+    h3,
+    .serif {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
     }
+
+    a {
+      text-decoration: none;
+    }
+
+
+    /* ================================
+       NAVIGATION
+       ================================ */
+
+    nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 20;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      padding: 28px 7%;
+    }
+
+    .brand {
+      color: var(--white);
+      font-size: 20px;
+      letter-spacing: 7px;
+      font-weight: 600;
+    }
+
+    .nav-link {
+      color: var(--cream);
+      font-size: 13px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+
+      border-bottom: 1px solid var(--champagne);
+      padding-bottom: 4px;
+    }
+
+
+    /* ================================
+       HERO
+       ================================ */
 
     .hero {
-      max-width: 750px;
+      min-height: 100vh;
+
+      position: relative;
+
+      display: flex;
+      align-items: center;
+
+      padding: 150px 8% 100px;
+
+      background:
+        radial-gradient(
+          circle at 75% 45%,
+          rgba(155, 106, 69, .20),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 20% 70%,
+          rgba(109, 74, 50, .14),
+          transparent 35%
+        ),
+        linear-gradient(
+          120deg,
+          #090807 0%,
+          #120d0b 55%,
+          #211610 100%
+        );
     }
 
-    .logo {
-      font-size: 42px;
-      letter-spacing: 8px;
-      font-weight: 600;
-      margin-bottom: 25px;
+    .hero::after {
+      content: "";
+      position: absolute;
+
+      right: -100px;
+      top: 20%;
+
+      width: 450px;
+      height: 450px;
+
+      border-radius: 50%;
+
+      background: rgba(184, 137, 93, .08);
+      filter: blur(20px);
     }
 
-    h1 {
-      font-size: 42px;
-      line-height: 1.15;
-      margin-bottom: 20px;
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 880px;
     }
 
-    h2 {
-      font-size: 30px;
-      margin-bottom: 15px;
+    .eyebrow {
+      color: var(--champagne);
+
+      font-size: 12px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+
+      margin-bottom: 28px;
     }
 
-    h3 {
-      margin-bottom: 8px;
+    .hero h1 {
+      color: var(--white);
+
+      font-size: clamp(48px, 7vw, 92px);
+      line-height: .98;
+
+      max-width: 900px;
+
+      margin-bottom: 35px;
     }
 
-    p {
-      font-size: 17px;
+    .hero h1 em {
+      color: var(--champagne);
+      font-style: italic;
     }
 
-    .subtitle {
-      max-width: 620px;
-      margin: 0 auto 30px;
+    .hero-description {
+      max-width: 570px;
+
+      color: var(--cream-dark);
+
+      font-size: 18px;
+
+      margin-bottom: 38px;
     }
+
+    .hero-small {
+      color: var(--muted);
+
+      font-size: 13px;
+      letter-spacing: 1px;
+
+      margin-top: 22px;
+    }
+
+
+    /* ================================
+       BUTTONS
+       ================================ */
 
     .btn {
       display: inline-block;
-      padding: 15px 28px;
-      margin: 10px 5px;
-      background: #2f2a26;
-      color: white;
-      text-decoration: none;
-      border-radius: 30px;
-      font-weight: bold;
-      transition: 0.2s;
+
+      background: var(--cream);
+      color: var(--black);
+
+      padding: 16px 30px;
+
+      border-radius: 2px;
+
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+
+      transition: .3s ease;
     }
 
     .btn:hover {
-      opacity: 0.85;
-      transform: translateY(-1px);
+      background: var(--champagne);
+      transform: translateY(-2px);
     }
 
-    .btn-outline {
+    .btn-dark {
       display: inline-block;
-      padding: 13px 25px;
-      margin: 10px 5px;
-      border: 1px solid #2f2a26;
-      color: #2f2a26;
-      text-decoration: none;
-      border-radius: 30px;
-      font-weight: bold;
+
+      background: var(--black);
+      color: var(--cream);
+
+      padding: 16px 30px;
+
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+
+      transition: .3s ease;
     }
 
-    section {
+    .btn-dark:hover {
+      background: var(--brown);
+    }
+
+
+    /* ================================
+       STATEMENT
+       ================================ */
+
+    .statement {
+      background: var(--cream);
+      color: var(--black);
+
+      padding: 110px 8%;
+
+      text-align: center;
+    }
+
+    .statement-inner {
       max-width: 900px;
       margin: auto;
-      padding: 70px 22px;
     }
 
-    .center {
-      text-align: center;
+    .statement .mini {
+      color: #7b6652;
+
+      font-size: 11px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+
+      margin-bottom: 30px;
     }
 
-    .cards {
+    .statement h2 {
+      font-size: clamp(37px, 5vw, 62px);
+      line-height: 1.12;
+
+      margin-bottom: 32px;
+    }
+
+    .statement p {
+      max-width: 690px;
+      margin: auto;
+
+      font-size: 18px;
+      color: #544a43;
+    }
+
+
+    /* ================================
+       WHAT IS LISTENEA
+       ================================ */
+
+    .what {
+      background: var(--espresso);
+
+      padding: 120px 8%;
+    }
+
+    .what-grid {
+      max-width: 1100px;
+      margin: auto;
+
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-      margin-top: 35px;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 80px;
+
+      align-items: start;
     }
 
-    .card {
-      background: white;
-      padding: 32px 25px;
-      border-radius: 18px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    .section-number {
+      color: var(--champagne);
+
+      font-size: 12px;
+      letter-spacing: 3px;
+
+      margin-bottom: 20px;
+    }
+
+    .what h2 {
+      font-size: clamp(40px, 5vw, 64px);
+      line-height: 1.05;
+    }
+
+    .what-copy {
+      color: var(--cream-dark);
+      font-size: 18px;
+    }
+
+    .what-copy p {
+      margin-bottom: 22px;
+    }
+
+    .big-line {
+      color: var(--white);
+
+      font-family: Georgia, serif;
+      font-size: 27px;
+      line-height: 1.4;
+
+      border-left: 1px solid var(--champagne);
+
+      padding-left: 25px;
+      margin: 35px 0;
+    }
+
+
+    /* ================================
+       MANIFESTO
+       ================================ */
+
+    .manifesto {
+      padding: 110px 8%;
+
+      background:
+        linear-gradient(
+          135deg,
+          #21150f,
+          #0d0a08
+        );
+
       text-align: center;
     }
 
-    .price {
-      font-size: 30px;
-      font-weight: bold;
-      margin: 12px 0;
-    }
-
-    .rules {
-      background: #eee5da;
-      max-width: none;
-    }
-
-    .rules-content {
+    .manifesto h2 {
       max-width: 850px;
       margin: auto;
+
+      font-size: clamp(36px, 5vw, 60px);
+      line-height: 1.15;
     }
 
-    .rules ul {
-      padding-left: 25px;
+    .manifesto h2 span {
+      color: var(--champagne);
+      font-style: italic;
     }
 
-    .rules li {
-      margin-bottom: 12px;
+
+    /* ================================
+       HOW IT WORKS
+       ================================ */
+
+    .how {
+      background: #100c0a;
+
+      padding: 120px 8%;
     }
 
-    .booking {
-      text-align: center;
+    .section-heading {
+      max-width: 1100px;
+      margin: 0 auto 65px;
     }
 
-    .payment-box {
-      background: white;
-      max-width: 560px;
-      margin: 30px auto;
-      padding: 32px 25px;
-      border-radius: 18px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
-    }
-
-    .payment-number {
-      font-size: 27px;
-      font-weight: bold;
-      letter-spacing: 1px;
-      margin: 15px 0;
+    .section-heading h2 {
+      font-size: clamp(42px, 5vw, 65px);
     }
 
     .steps {
-      max-width: 600px;
-      margin: 30px auto;
-      text-align: left;
-      background: #faf8f4;
-      padding: 25px 30px;
-      border-radius: 18px;
+      max-width: 1100px;
+      margin: auto;
+
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+
+      border-top: 1px solid #3c3028;
     }
 
-    .steps li {
-      margin-bottom: 10px;
+    .step {
+      padding: 38px 25px;
+
+      border-right: 1px solid #3c3028;
     }
 
-    .note {
+    .step:last-child {
+      border-right: none;
+    }
+
+    .step-number {
+      color: var(--champagne);
+
+      font-family: Georgia, serif;
+      font-size: 35px;
+
+      margin-bottom: 25px;
+    }
+
+    .step h3 {
+      font-size: 22px;
+      margin-bottom: 13px;
+    }
+
+    .step p {
+      color: var(--muted);
       font-size: 14px;
-      opacity: 0.75;
-      max-width: 600px;
-      margin: 20px auto;
     }
 
-    .coming-soon {
-      max-width: 560px;
-      margin: 30px auto;
-      padding: 20px;
-      border: 1px solid #d8d0c7;
-      border-radius: 15px;
+
+    /* ================================
+       PRICING
+       ================================ */
+
+    .pricing {
+      background: var(--cream);
+      color: var(--black);
+
+      padding: 120px 8%;
     }
+
+    .pricing-heading {
+      text-align: center;
+
+      max-width: 700px;
+      margin: 0 auto 60px;
+    }
+
+    .pricing-heading h2 {
+      font-size: clamp(42px, 5vw, 62px);
+      margin-bottom: 15px;
+    }
+
+    .pricing-heading p {
+      color: #65594f;
+    }
+
+    .price-grid {
+      max-width: 900px;
+      margin: auto;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 25px;
+    }
+
+    .price-card {
+      background: #fffaf4;
+
+      border: 1px solid #d8ccbd;
+
+      padding: 50px 40px;
+
+      position: relative;
+    }
+
+    .price-card.featured {
+      background: var(--brown);
+      color: var(--cream);
+
+      border-color: var(--brown);
+    }
+
+    .price-label {
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+
+      margin-bottom: 35px;
+
+      color: #826e5c;
+    }
+
+    .featured .price-label {
+      color: var(--champagne);
+    }
+
+    .price-card h3 {
+      font-size: 31px;
+      margin-bottom: 12px;
+    }
+
+    .price-value {
+      font-family: Georgia, serif;
+      font-size: 52px;
+
+      margin: 25px 0;
+    }
+
+    .price-card p {
+      min-height: 70px;
+      color: #65594f;
+
+      margin-bottom: 30px;
+    }
+
+    .featured p {
+      color: var(--cream-dark);
+    }
+
+
+    /* ================================
+       BOUNDARIES
+       ================================ */
+
+    .boundaries {
+      background: var(--black);
+
+      padding: 120px 8%;
+    }
+
+    .boundaries-inner {
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .boundaries h2 {
+      font-size: clamp(40px, 5vw, 60px);
+      margin-bottom: 25px;
+    }
+
+    .boundary-intro {
+      max-width: 700px;
+
+      color: var(--cream-dark);
+
+      margin-bottom: 50px;
+    }
+
+    .rules-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 60px;
+    }
+
+    .rule {
+      padding: 22px 0;
+
+      border-bottom: 1px solid #302620;
+
+      color: var(--cream-dark);
+    }
+
+    .rule strong {
+      color: var(--white);
+    }
+
+
+    /* ================================
+       PAYMENT
+       ================================ */
+
+    .reserve {
+      background:
+        radial-gradient(
+          circle at 50% 10%,
+          rgba(175, 127, 84, .18),
+          transparent 30%
+        ),
+        var(--espresso);
+
+      padding: 120px 8%;
+
+      text-align: center;
+    }
+
+    .reserve-inner {
+      max-width: 720px;
+      margin: auto;
+    }
+
+    .reserve h2 {
+      font-size: clamp(45px, 6vw, 70px);
+      margin-bottom: 20px;
+    }
+
+    .reserve-sub {
+      color: var(--cream-dark);
+      margin-bottom: 50px;
+    }
+
+    .payment {
+      background: rgba(255,255,255,.04);
+
+      border: 1px solid #49382d;
+
+      padding: 40px 30px;
+
+      margin-bottom: 30px;
+    }
+
+    .payment h3 {
+      font-size: 26px;
+      margin-bottom: 15px;
+    }
+
+    .payment-number {
+      color: var(--champagne);
+
+      font-family: Georgia, serif;
+      font-size: clamp(30px, 6vw, 45px);
+
+      margin: 15px 0;
+    }
+
+    .payment p {
+      color: var(--muted);
+    }
+
+    .confirmation {
+      margin: 35px 0;
+
+      color: var(--cream-dark);
+    }
+
+    .important {
+      max-width: 580px;
+      margin: 25px auto 0;
+
+      color: var(--muted);
+
+      font-size: 13px;
+    }
+
+
+    /* ================================
+       FINAL CTA
+       ================================ */
+
+    .final {
+      background: var(--cream);
+      color: var(--black);
+
+      text-align: center;
+
+      padding: 110px 8%;
+    }
+
+    .final h2 {
+      max-width: 780px;
+      margin: 0 auto 25px;
+
+      font-size: clamp(40px, 5vw, 62px);
+      line-height: 1.1;
+    }
+
+    .final p {
+      color: #65594f;
+
+      margin-bottom: 35px;
+    }
+
+
+    /* ================================
+       FOOTER
+       ================================ */
 
     footer {
-      text-align: center;
-      padding: 35px 20px;
-      background: #2f2a26;
-      color: white;
+      background: #070605;
+
+      padding: 50px 8%;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      color: var(--muted);
+    }
+
+    .footer-brand {
+      color: var(--cream);
+
+      letter-spacing: 6px;
+      font-size: 18px;
     }
 
     footer p {
-      margin-bottom: 0;
+      font-size: 12px;
     }
 
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 34px;
-      }
 
-      h2 {
-        font-size: 27px;
-      }
+    /* ================================
+       FLOATING WHATSAPP
+       ================================ */
 
-      .logo {
-        font-size: 32px;
-        letter-spacing: 6px;
-      }
+    .whatsapp-float {
+      position: fixed;
 
-      section {
-        padding: 55px 18px;
-      }
+      right: 22px;
+      bottom: 22px;
+
+      width: 62px;
+      height: 62px;
+
+      border-radius: 50%;
+
+      background: var(--whatsapp);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      z-index: 999;
+
+      box-shadow: 0 8px 30px rgba(0,0,0,.35);
+
+      transition: .3s ease;
     }
+
+    .whatsapp-float:hover {
+      transform: scale(1.08);
+    }
+
+    .whatsapp-float svg {
+      width: 32px;
+      height: 32px;
+
+      fill: white;
+    }
+
+
+    /* ================================
+       MOBILE
+       ================================ */
+
+    @media (max-width: 800px) {
+
+      nav {
+        padding: 22px 6%;
+      }
+
+      .brand {
+        font-size: 16px;
+        letter-spacing: 5px;
+      }
+
+      .nav-link {
+        font-size: 10px;
+      }
+
+      .hero {
+        padding: 135px 7% 80px;
+      }
+
+      .hero h1 {
+        font-size: 52px;
+      }
+
+      .what-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .step {
+        border-right: none;
+        border-bottom: 1px solid #3c3028;
+      }
+
+      .price-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .rules-grid {
+        grid-template-columns: 1fr;
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 15px;
+
+        text-align: center;
+      }
+
+    }
+
+
+    @media (max-width: 480px) {
+
+      .hero h1 {
+        font-size: 43px;
+      }
+
+      .hero-description {
+        font-size: 16px;
+      }
+
+      .statement,
+      .what,
+      .manifesto,
+      .how,
+      .pricing,
+      .boundaries,
+      .reserve,
+      .final {
+        padding-left: 6%;
+        padding-right: 6%;
+      }
+
+      .price-card {
+        padding: 40px 25px;
+      }
+
+    }
+
   </style>
 </head>
 
 
 <body>
 
-  <!-- PORTADA -->
-  <header>
-    <div class="hero">
 
-      <div class="logo">LISTENEA</div>
+  <!-- ===============================
+       NAVIGATION
+       =============================== -->
 
-      <h1>A veces solo necesitas ser escuchado.</h1>
+  <nav>
 
-      <p class="subtitle">
-        Un espacio privado, respetuoso y confidencial para conversar
-        sin juicios, sin presión y a tu propio ritmo.
+    <div class="brand">
+      LISTENEA
+    </div>
+
+    <a class="nav-link" href="#reservar">
+      Reservar
+    </a>
+
+  </nav>
+
+
+
+  <!-- ===============================
+       HERO
+       =============================== -->
+
+  <header class="hero">
+
+    <div class="hero-content">
+
+      <div class="eyebrow">
+        Escucha humana · Privada · Sin juicios
+      </div>
+
+      <h1>
+        Hay cosas que no puedes contarle a
+        <em>todo el mundo.</em>
+      </h1>
+
+      <p class="hero-description">
+        Pero a veces necesitas contárselas a alguien.
+        LISTENEA es un espacio privado para hablar,
+        desahogarte y sentirte realmente escuchado.
       </p>
 
       <a class="btn" href="#reservar">
-        Reservar una conversación
+        Quiero hablar →
       </a>
 
-      <a
-        class="btn-outline"
-        href="https://wa.me/51940020365?text=Hola%20LISTENEA,%20quisiera%20más%20información."
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Más información
-      </a>
+      <p class="hero-small">
+        Para adultos mayores de 25 años.
+      </p>
 
     </div>
+
   </header>
 
 
-  <!-- SOBRE LISTENEA -->
-  <section class="center">
 
-    <h2>Un espacio para hablar</h2>
+  <!-- ===============================
+       PURPOSE
+       =============================== -->
 
-    <p>
-      LISTENEA nace para ofrecer un momento de conversación y escucha
-      humana en un ambiente de respeto, privacidad y confidencialidad.
-    </p>
+  <section class="statement">
 
-    <p>
-      No necesitas tener las palabras perfectas.
-      Puedes simplemente hablar y ser escuchado.
-    </p>
+    <div class="statement-inner">
+
+      <div class="mini">
+        El propósito
+      </div>
+
+      <h2>
+        No siempre necesitas una respuesta.
+        A veces solo necesitas que alguien
+        realmente te escuche.
+      </h2>
+
+      <p>
+        Hay conversaciones que postergamos.
+        Pensamientos que guardamos.
+        Días en los que simplemente queremos hablar
+        sin sentirnos juzgados, interrumpidos
+        o presionados.
+      </p>
+
+    </div>
 
   </section>
 
 
-  <!-- PRECIOS -->
-  <section>
 
-    <div class="center">
+  <!-- ===============================
+       WHAT IS LISTENEA
+       =============================== -->
 
-      <h2>Elige tu espacio</h2>
+  <section class="what">
+
+    <div class="what-grid">
+
+      <div>
+
+        <div class="section-number">
+          01 — LISTENEA
+        </div>
+
+        <h2>
+          ¿Qué es LISTENEA?
+        </h2>
+
+      </div>
+
+
+      <div class="what-copy">
+
+        <p>
+          LISTENEA es un espacio de
+          <strong>escucha humana y conversación privada</strong>
+          creado para adultos que necesitan hablar con alguien
+          dispuesto a escuchar con atención y respeto.
+        </p>
+
+        <div class="big-line">
+          Habla de tu día. De tus relaciones.
+          De tus decisiones. De lo que te preocupa.
+          O de aquello que todavía no has podido decir en voz alta.
+        </div>
+
+        <p>
+          Aquí no necesitas impresionar a nadie
+          ni encontrar las palabras perfectas.
+          Puedes simplemente ser tú, hablar a tu ritmo
+          y sentirte escuchado.
+        </p>
+
+        <p>
+          <strong>LISTENEA no es terapia.</strong>
+          No realizamos diagnósticos ni tratamientos psicológicos
+          o médicos. Nuestro propósito es ofrecer
+          conversación, presencia y escucha humana.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ===============================
+       MANIFESTO
+       =============================== -->
+
+  <section class="manifesto">
+
+    <h2>
+      Sin juicios. Sin presión.
+      Sin tener que fingir que
+      <span>todo está bien.</span>
+    </h2>
+
+  </section>
+
+
+
+  <!-- ===============================
+       HOW IT WORKS
+       =============================== -->
+
+  <section class="how">
+
+    <div class="section-heading">
+
+      <div class="section-number">
+        02 — CÓMO FUNCIONA
+      </div>
+
+      <h2>
+        Simple. Privado. Humano.
+      </h2>
+
+    </div>
+
+
+    <div class="steps">
+
+      <div class="step">
+
+        <div class="step-number">
+          01
+        </div>
+
+        <h3>
+          Elige tu tiempo
+        </h3>
+
+        <p>
+          Escoge una conversación
+          de 30 o 60 minutos.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="step-number">
+          02
+        </div>
+
+        <h3>
+          Realiza el pago
+        </h3>
+
+        <p>
+          Paga de forma sencilla
+          mediante Yape o Plin.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="step-number">
+          03
+        </div>
+
+        <h3>
+          Escríbenos
+        </h3>
+
+        <p>
+          Envía tu comprobante
+          al WhatsApp oficial de LISTENEA.
+        </p>
+
+      </div>
+
+
+      <div class="step">
+
+        <div class="step-number">
+          04
+        </div>
+
+        <h3>
+          Confirmamos
+        </h3>
+
+        <p>
+          Verificamos el pago
+          y coordinamos tu día y horario.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ===============================
+       PRICING
+       =============================== -->
+
+  <section class="pricing">
+
+    <div class="pricing-heading">
+
+      <div class="section-number">
+        03 — TU ESPACIO
+      </div>
+
+      <h2>
+        ¿Cuánto tiempo necesitas?
+      </h2>
 
       <p>
-        Selecciona el tiempo que necesites para conversar.
+        Tú eliges el tiempo. Nosotros ponemos la escucha.
       </p>
 
     </div>
 
 
-    <div class="cards">
+    <div class="price-grid">
 
-      <!-- 30 MINUTOS -->
-      <div class="card">
+      <div class="price-card">
 
-        <h3>Conversación de 30 minutos</h3>
+        <div class="price-label">
+          Una pausa para hablar
+        </div>
 
-        <div class="price">
-          S/ 49.00
+        <h3>
+          30 minutos
+        </h3>
+
+        <div class="price-value">
+          S/ 49
         </div>
 
         <p>
-          Un espacio privado para hablar, expresarte
+          Un espacio privado para hablar,
+          liberar lo que llevas dentro
           y sentirte escuchado.
         </p>
 
-        <a class="btn" href="#reservar">
-          Reservar 30 minutos
+        <a class="btn-dark" href="#reservar">
+          Elegir 30 min →
         </a>
 
       </div>
 
 
-      <!-- 60 MINUTOS -->
-      <div class="card">
+      <div class="price-card featured">
 
-        <h3>Conversación de 60 minutos</h3>
+        <div class="price-label">
+          Más tiempo para ti
+        </div>
 
-        <div class="price">
-          S/ 99.00
+        <h3>
+          60 minutos
+        </h3>
+
+        <div class="price-value">
+          S/ 99
         </div>
 
         <p>
-          Más tiempo para conversar con calma
+          Una conversación con más tiempo
+          para expresarte con calma
           y a tu propio ritmo.
         </p>
 
         <a class="btn" href="#reservar">
-          Reservar 60 minutos
+          Elegir 60 min →
         </a>
 
       </div>
@@ -339,251 +1184,200 @@
   </section>
 
 
-  <!-- REGLAS -->
-  <section class="rules">
 
-    <div class="rules-content">
+  <!-- ===============================
+       PRIVACY + BOUNDARIES
+       =============================== -->
 
-      <h2 class="center">
-        Antes de reservar
+  <section class="boundaries">
+
+    <div class="boundaries-inner">
+
+      <div class="section-number">
+        04 — PRIVACIDAD Y LÍMITES
+      </div>
+
+      <h2>
+        Tu espacio merece respeto.
       </h2>
 
-      <p class="center">
-        Al solicitar una conversación con LISTENEA,
-        aceptas las siguientes condiciones:
+      <p class="boundary-intro">
+        Para proteger tanto a quienes utilizan LISTENEA
+        como a nuestras listeners, todas las conversaciones
+        siguen límites claros.
       </p>
 
 
-      <ul>
+      <div class="rules-grid">
 
-        <li>
-          El servicio está disponible únicamente
-          para personas mayores de 25 años.
-        </li>
+        <div class="rule">
+          <strong>+25 años.</strong>
+          Servicio exclusivo para adultos mayores de 25 años.
+        </div>
 
-        <li>
-          El respeto mutuo es obligatorio durante
-          toda la conversación.
-        </li>
+        <div class="rule">
+          <strong>Respeto mutuo.</strong>
+          No toleramos acoso, amenazas ni faltas de respeto.
+        </div>
 
-        <li>
-          La privacidad y confidencialidad son
-          fundamentales.
-        </li>
+        <div class="rule">
+          <strong>Privacidad.</strong>
+          La conversación se desarrolla en un espacio privado.
+        </div>
 
-        <li>
-          No se permiten conversaciones,
-          solicitudes ni contenido sexual.
-        </li>
+        <div class="rule">
+          <strong>Sin contenido sexual.</strong>
+          No se permiten conversaciones ni solicitudes sexuales.
+        </div>
 
-        <li>
-          La listener tiene derecho a finalizar
-          inmediatamente la conversación ante acoso,
-          amenazas, contenido sexual o faltas de respeto.
-        </li>
+        <div class="rule">
+          <strong>Sin grabaciones.</strong>
+          No está permitido grabar las conversaciones.
+        </div>
 
-        <li>
-          Está prohibido grabar la sesión,
-          ya sea en audio, video o cualquier otro formato.
-        </li>
+        <div class="rule">
+          <strong>Solo online.</strong>
+          No se realizan encuentros presenciales con clientes.
+        </div>
 
-        <li>
-          No se realizan encuentros presenciales
-          con clientes.
-        </li>
+        <div class="rule">
+          <strong>Límites saludables.</strong>
+          LISTENEA no busca generar dependencia emocional.
+        </div>
 
-        <li>
-          LISTENEA promueve límites saludables.
-          El servicio no busca crear dependencia emocional.
-        </li>
+        <div class="rule">
+          <strong>No es terapia.</strong>
+          No ofrecemos diagnósticos ni tratamientos psicológicos o médicos.
+        </div>
 
-        <li>
-          LISTENEA ofrece escucha y conversación.
-          No ofrece terapia, diagnósticos,
-          tratamientos psicológicos ni servicios médicos.
-        </li>
+        <div class="rule">
+          <strong>Seguridad.</strong>
+          Una listener puede finalizar la llamada ante conductas inapropiadas
+          o situaciones de riesgo.
+        </div>
 
-        <li>
-          Ante amenazas o situaciones que impliquen
-          un riesgo inmediato, la conversación podrá
-          finalizarse y se recomendará buscar ayuda
-          profesional o de emergencia apropiada.
-        </li>
-
-        <li>
-          Una vez confirmada la sesión,
-          los pagos no son reembolsables,
+        <div class="rule">
+          <strong>Pagos.</strong>
+          Una vez confirmada la sesión, el pago no es reembolsable,
           salvo cancelación por parte de LISTENEA.
-        </li>
+        </div>
 
-      </ul>
+      </div>
 
     </div>
 
   </section>
 
 
-  <!-- RESERVA Y PAGO -->
-  <section class="booking" id="reservar">
+
+  <!-- ===============================
+       RESERVATION
+       =============================== -->
+
+  <section class="reserve" id="reservar">
+
+    <div class="reserve-inner">
+
+      <div class="section-number">
+        05 — RESERVA
+      </div>
+
+      <h2>
+        Este espacio es para ti.
+      </h2>
+
+      <p class="reserve-sub">
+        Elige tu tiempo, realiza el pago
+        y envíanos tu comprobante.
+      </p>
+
+
+      <div class="payment">
+
+        <h3>
+          Yape o Plin
+        </h3>
+
+        <div class="payment-number">
+          +51 994 499 556
+        </div>
+
+        <p>
+          30 minutos — S/ 49
+          <br>
+          60 minutos — S/ 99
+        </p>
+
+      </div>
+
+
+      <div class="confirmation">
+
+        Después de pagar, envíanos tu comprobante
+        junto con tu nombre, la duración elegida
+        y el día y horario que prefieres.
+
+      </div>
+
+
+      <a
+        class="btn"
+        href="https://wa.me/51940020365?text=Hola%20LISTENEA,%20ya%20realicé%20mi%20pago%20y%20quiero%20confirmar%20mi%20reserva.%20Adjunto%20mi%20comprobante."
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Enviar comprobante →
+      </a>
+
+
+      <p class="important">
+        La reserva queda confirmada únicamente después
+        de verificar el pago y confirmar la disponibilidad
+        del horario solicitado.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ===============================
+       FINAL CTA
+       =============================== -->
+
+  <section class="final">
 
     <h2>
-      Reserva tu espacio
+      Tal vez no necesitas guardártelo todo hoy.
     </h2>
 
     <p>
-      Elige una conversación de
-      <strong>30 minutos por S/ 49.00</strong>
-      o
-      <strong>60 minutos por S/ 99.00</strong>.
+      Cuando quieras hablar, estamos aquí para escuchar.
     </p>
-
-
-    <!-- YAPE / PLIN -->
-    <div class="payment-box">
-
-      <h3>
-        Paga con Yape o Plin 🇵🇪
-      </h3>
-
-      <p class="payment-number">
-        +51 994 499 556
-      </p>
-
-      <p>
-        Realiza el pago correspondiente
-        a la duración que deseas reservar.
-      </p>
-
-    </div>
-
-
-    <!-- PASOS -->
-    <div class="steps">
-
-      <strong>¿Cómo confirmar tu reserva?</strong>
-
-      <ol>
-
-        <li>
-          Elige una sesión de 30 o 60 minutos.
-        </li>
-
-        <li>
-          Realiza el pago por Yape o Plin.
-        </li>
-
-        <li>
-          Guarda tu comprobante de pago.
-        </li>
-
-        <li>
-          Envíalo al WhatsApp oficial de LISTENEA.
-        </li>
-
-        <li>
-          Indica tu nombre, duración elegida
-          y el día y horario que prefieres.
-        </li>
-
-        <li>
-          LISTENEA verificará el pago y
-          la disponibilidad antes de confirmar la sesión.
-        </li>
-
-      </ol>
-
-    </div>
-
-
-    <!-- COMPROBANTE -->
-    <h3>
-      ¿Ya realizaste el pago?
-    </h3>
-
-    <p>
-      Envía tu comprobante por WhatsApp
-      para solicitar la confirmación de tu reserva.
-    </p>
-
 
     <a
-      class="btn"
-      href="https://wa.me/51940020365?text=Hola%20LISTENEA,%20ya%20realicé%20mi%20pago%20y%20quiero%20confirmar%20mi%20reserva.%20Adjunto%20mi%20comprobante."
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Enviar comprobante por WhatsApp
-    </a>
-
-
-    <p class="note">
-
-      Importante: enviar el comprobante no confirma
-      automáticamente la reserva.
-
-      LISTENEA verificará el pago y la disponibilidad
-      del horario antes de confirmar tu sesión.
-
-    </p>
-
-
-    <!-- TARJETAS FUTURAS -->
-    <div class="coming-soon">
-
-      <strong>
-        Próximamente
-      </strong>
-
-      <p>
-        Pagos con tarjeta de crédito y débito.
-      </p>
-
-      <p>
-        Visa · Mastercard
-      </p>
-
-    </div>
-
-
-    <hr
-      style="
-        margin: 45px auto;
-        max-width: 500px;
-        opacity: 0.25;
-      "
-    >
-
-
-    <!-- INFORMACIÓN -->
-    <h3>
-      ¿Necesitas más información?
-    </h3>
-
-    <p>
-      Escríbenos directamente al WhatsApp
-      oficial de LISTENEA.
-    </p>
-
-
-    <a
-      class="btn-outline"
+      class="btn-dark"
       href="https://wa.me/51940020365?text=Hola%20LISTENEA,%20quisiera%20más%20información."
       target="_blank"
       rel="noopener noreferrer"
     >
-      WhatsApp +51 940 020 365
+      Hablar con LISTENEA →
     </a>
-
 
   </section>
 
 
-  <!-- FOOTER -->
+
+  <!-- ===============================
+       FOOTER
+       =============================== -->
+
   <footer>
 
-    <strong>
+    <div class="footer-brand">
       LISTENEA
-    </strong>
+    </div>
 
     <p>
       Escucha humana · Privacidad · Respeto
@@ -592,6 +1386,30 @@
   </footer>
 
 
-</body>
 
+  <!-- ===============================
+       FLOATING WHATSAPP BUTTON
+       LISTENEA: +51 940 020 365
+       =============================== -->
+
+  <a
+    class="whatsapp-float"
+    href="https://wa.me/51940020365?text=Hola%20LISTENEA,%20quisiera%20más%20información."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Contactar LISTENEA por WhatsApp"
+  >
+
+    <svg
+      viewBox="0 0 32 32"
+      aria-hidden="true"
+    >
+      <path d="M19.11 17.21c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.35-.81-.72-1.36-1.61-1.52-1.88-.16-.27-.02-.42.12-.55.12-.12.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.47-.84-2.01-.22-.53-.45-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27 0 1.34.98 2.64 1.11 2.82.14.18 1.92 2.93 4.65 4.11.65.28 1.16.45 1.56.58.66.21 1.25.18 1.72.11.52-.08 1.6-.66 1.83-1.29.23-.64.23-1.18.16-1.29-.07-.11-.25-.18-.52-.32z"/>
+      <path d="M16.02 3C8.84 3 3 8.82 3 15.98c0 2.29.6 4.52 1.73 6.48L2.9 29.14l6.84-1.79a13.03 13.03 0 0 0 6.27 1.6h.01C23.19 28.95 29 23.13 29 15.98 29 8.82 23.19 3 16.02 3zm0 23.76h-.01a10.82 10.82 0 0 1-5.51-1.51l-.39-.23-4.06 1.06 1.08-3.95-.25-.41a10.77 10.77 0 0 1-1.66-5.74c0-5.95 4.85-10.79 10.81-10.79 5.96 0 10.8 4.84 10.8 10.79 0 5.95-4.85 10.78-10.81 10.78z"/>
+    </svg>
+
+  </a>
+
+
+</body>
 </html>
